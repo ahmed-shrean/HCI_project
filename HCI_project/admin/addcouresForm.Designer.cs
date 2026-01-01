@@ -31,10 +31,11 @@
             button2 = new Button();
             button1 = new Button();
             label1 = new Label();
-            cours_code = new TextBox();
+            txtCourseCode = new TextBox();
             label3 = new Label();
             label4 = new Label();
             btnhome = new Button();
+            cmbCourses = new ComboBox();
             SuspendLayout();
             // 
             // button2
@@ -45,6 +46,7 @@
             button2.TabIndex = 7;
             button2.Text = "add";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -64,12 +66,12 @@
             label1.TabIndex = 4;
             label1.Text = "course name";
             // 
-            // cours_code
+            // txtCourseCode
             // 
-            cours_code.Location = new Point(285, 154);
-            cours_code.Name = "cours_code";
-            cours_code.Size = new Size(100, 23);
-            cours_code.TabIndex = 10;
+            txtCourseCode.Location = new Point(285, 154);
+            txtCourseCode.Name = "txtCourseCode";
+            txtCourseCode.Size = new Size(100, 23);
+            txtCourseCode.TabIndex = 10;
             // 
             // label3
             // 
@@ -97,15 +99,26 @@
             btnhome.TabIndex = 12;
             btnhome.Text = "home";
             btnhome.UseVisualStyleBackColor = true;
+            btnhome.Click += btnhome_Click;
+            // 
+            // cmbCourses
+            // 
+            cmbCourses.FormattingEnabled = true;
+            cmbCourses.Location = new Point(285, 102);
+            cmbCourses.Name = "cmbCourses";
+            cmbCourses.Size = new Size(121, 23);
+            cmbCourses.TabIndex = 13;
+            cmbCourses.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // addcouresForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbCourses);
             Controls.Add(btnhome);
             Controls.Add(label4);
-            Controls.Add(cours_code);
+            Controls.Add(txtCourseCode);
             Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -122,9 +135,10 @@
         private Button button2;
         private Button button1;
         private Label label1;
-        private TextBox cours_code;
+        private TextBox txtCourseCode;
         private Label label3;
         private Label label4;
         private Button btnhome;
+        private ComboBox cmbCourses;
     }
 }

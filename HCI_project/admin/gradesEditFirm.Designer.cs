@@ -28,47 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
-            button1 = new Button();
-            comboBox1 = new ComboBox();
+            add = new Button();
+            cmbCourses = new ComboBox();
             label1 = new Label();
             btnhome = new Button();
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtscore = new TextBox();
+            txtstuname = new TextBox();
+            txtexname = new TextBox();
+            txtmaxscore = new TextBox();
             label7 = new Label();
             SuspendLayout();
             // 
-            // button2
+            // add
             // 
-            button2.Location = new Point(194, 375);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 15;
-            button2.Text = "add";
-            button2.UseVisualStyleBackColor = true;
+            add.Location = new Point(194, 375);
+            add.Name = "add";
+            add.Size = new Size(75, 23);
+            add.TabIndex = 15;
+            add.Text = "add";
+            add.UseVisualStyleBackColor = true;
+            add.Click += button2_Click;
             // 
-            // button1
+            // cmbCourses
             // 
-            button1.Location = new Point(442, 375);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 14;
-            button1.Text = "delete";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(266, 72);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 13;
-            
+            cmbCourses.FormattingEnabled = true;
+            cmbCourses.Location = new Point(266, 72);
+            cmbCourses.Name = "cmbCourses";
+            cmbCourses.Size = new Size(121, 23);
+            cmbCourses.TabIndex = 13;
+            cmbCourses.SelectedIndexChanged += comCourse_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -88,6 +79,7 @@
             btnhome.TabIndex = 19;
             btnhome.Text = "home";
             btnhome.UseVisualStyleBackColor = true;
+            btnhome.Click += btnhome_Click;
             // 
             // label2
             // 
@@ -116,33 +108,37 @@
             label5.TabIndex = 22;
             label5.Text = "exam name";
             // 
-            // textBox1
+            // txtscore
             // 
-            textBox1.Location = new Point(266, 248);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 24;
+            txtscore.Location = new Point(266, 248);
+            txtscore.Name = "txtscore";
+            txtscore.Size = new Size(100, 23);
+            txtscore.TabIndex = 24;
+            txtscore.KeyPress += txtscore_KeyPress;
             // 
-            // textBox2
+            // txtstuname
             // 
-            textBox2.Location = new Point(266, 181);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 25;
+            txtstuname.Location = new Point(266, 181);
+            txtstuname.Name = "txtstuname";
+            txtstuname.Size = new Size(100, 23);
+            txtstuname.TabIndex = 25;
             // 
-            // textBox3
+            // txtexname
             // 
-            textBox3.Location = new Point(266, 124);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 26;
+            txtexname.Location = new Point(266, 124);
+            txtexname.Name = "txtexname";
+            txtexname.Size = new Size(100, 23);
+            txtexname.TabIndex = 26;
+            txtexname.TextChanged += textBox3_TextChanged;
             // 
-            // textBox4
+            // txtmaxscore
             // 
-            textBox4.Location = new Point(268, 301);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 28;
+            txtmaxscore.Location = new Point(268, 301);
+            txtmaxscore.Name = "txtmaxscore";
+            txtmaxscore.Size = new Size(100, 23);
+            txtmaxscore.TabIndex = 28;
+            txtmaxscore.TextChanged += txtmaxscore_TextChanged;
+            txtmaxscore.KeyPress += txtmaxscore_KeyPress;
             // 
             // label7
             // 
@@ -158,18 +154,17 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox4);
+            Controls.Add(txtmaxscore);
             Controls.Add(label7);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtexname);
+            Controls.Add(txtstuname);
+            Controls.Add(txtscore);
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(btnhome);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(comboBox1);
+            Controls.Add(add);
+            Controls.Add(cmbCourses);
             Controls.Add(label1);
             Name = "gradesEditFirm";
             Text = "gradesEditFirm";
@@ -179,18 +174,17 @@
         }
 
         #endregion
-        private Button button2;
-        private Button button1;
-        private ComboBox comboBox1;
+        private Button add;
+        private ComboBox cmbCourses;
         private Label label1;
         private Button btnhome;
         private Label label2;
         private Label label3;
         private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtscore;
+        private TextBox txtstuname;
+        private TextBox txtexname;
+        private TextBox txtmaxscore;
         private Label label7;
     }
 }

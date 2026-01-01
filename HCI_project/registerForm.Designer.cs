@@ -35,16 +35,19 @@
             label1 = new Label();
             txtemail = new TextBox();
             label3 = new Label();
+            radStudent = new RadioButton();
+            radAdmin = new RadioButton();
             SuspendLayout();
             // 
             // btnSaveRegister
             // 
-            btnSaveRegister.Location = new Point(301, 280);
+            btnSaveRegister.Location = new Point(301, 336);
             btnSaveRegister.Name = "btnSaveRegister";
             btnSaveRegister.Size = new Size(75, 23);
             btnSaveRegister.TabIndex = 9;
             btnSaveRegister.Text = "save";
             btnSaveRegister.UseVisualStyleBackColor = true;
+            btnSaveRegister.Click += btnSaveRegister_Click;
             // 
             // txtPassword
             // 
@@ -94,11 +97,35 @@
             label3.TabIndex = 10;
             label3.Text = "email";
             // 
+            // radStudent
+            // 
+            radStudent.AutoSize = true;
+            radStudent.Location = new Point(413, 305);
+            radStudent.Name = "radStudent";
+            radStudent.Size = new Size(65, 19);
+            radStudent.TabIndex = 12;
+            radStudent.TabStop = true;
+            radStudent.Text = "student";
+            radStudent.UseVisualStyleBackColor = true;
+            // 
+            // radAdmin
+            // 
+            radAdmin.AutoSize = true;
+            radAdmin.Location = new Point(176, 305);
+            radAdmin.Name = "radAdmin";
+            radAdmin.Size = new Size(59, 19);
+            radAdmin.TabIndex = 13;
+            radAdmin.TabStop = true;
+            radAdmin.Text = "admin";
+            radAdmin.UseVisualStyleBackColor = true;
+            // 
             // registerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(radAdmin);
+            Controls.Add(radStudent);
             Controls.Add(txtemail);
             Controls.Add(label3);
             Controls.Add(btnSaveRegister);
@@ -121,5 +148,7 @@
         private Label label1;
         private TextBox txtemail;
         private Label label3;
+        private RadioButton radStudent;
+        private RadioButton radAdmin;
     }
 }

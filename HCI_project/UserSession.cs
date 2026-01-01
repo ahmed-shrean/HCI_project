@@ -9,6 +9,6 @@ namespace HCI_project
 {
     public static class UserSession
     {
-       // public static User loger { get; set; }
+        public static User loger { get; set; }
     }
 }

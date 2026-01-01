@@ -34,6 +34,7 @@ namespace HCI_project
             else
             {
                 User loginUser = dbContext.Users.FirstOrDefault(u => u.UserName == txtUserName.Text && u.Password == txtPassword.Text);
+                UserSession.loger = loginUser ;
                 if (loginUser != null && loginUser.Isadmin == true)
                 {
 

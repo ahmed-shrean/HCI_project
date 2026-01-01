@@ -61,6 +61,7 @@
             btnLogout.TabIndex = 10;
             btnLogout.Text = "log out";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // adminhomeform
             // 
