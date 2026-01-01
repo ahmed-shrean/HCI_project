@@ -13,13 +13,11 @@ public partial class Course
 
     public int CreditHours { get; set; }
 
-    public int UserId { get; set; }
-
     public virtual ICollection<Grade> Grades { get; set; } = new List<Grade>();
 
     public virtual ICollection<Note> Notes { get; set; } = new List<Note>();
 
-    public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
+    public virtual ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
 
-    public virtual User User { get; set; } = null!;
+    public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
 }

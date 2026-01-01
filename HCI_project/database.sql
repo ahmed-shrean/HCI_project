@@ -10,6 +10,18 @@ GO
 
 USE StudentOrganizerDB;
 GO
+USE master;
+GO
+
+-- 1. Kick everyone out (close all open connections)
+ALTER DATABASE StudentOrganizerDB 
+SET SINGLE_USER 
+WITH ROLLBACK IMMEDIATE;
+GO
+
+-- 2. Now you can delete it safely
+DROP DATABASE StudentOrganizerDB;
+GO
 
 -- 2. Create Users Table (Parent Table)
 CREATE TABLE Users (
@@ -20,16 +32,24 @@ CREATE TABLE Users (
     Isadmin bit DEFAULT 0 --the default is student
 	);
 GO
-
--- 3. Create Courses Table
--- A User has many Courses
 CREATE TABLE Courses (
     CourseID INT PRIMARY KEY IDENTITY(1,1),
     Name NVARCHAR(100) NOT NULL,
     Code NVARCHAR(20) NOT NULL,
-    CreditHours INT NOT NULL,
-    UserID INT NOT NULL, -- Foreign Key
-    CONSTRAINT FK_Courses_Users FOREIGN KEY (UserID) REFERENCES Users(UserID)
+    CreditHours INT NOT NULL
+    -- No UserID here anymore!
+);
+GO
+
+
+-- This creates the Many-to-Many relationship
+CREATE TABLE StudentCourses (
+    EnrollmentID INT PRIMARY KEY IDENTITY(1,1),
+    UserID INT NOT NULL,
+    CourseID INT NOT NULL,
+    
+    CONSTRAINT FK_Enroll_Users FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    CONSTRAINT FK_Enroll_Courses FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
 );
 GO
 
