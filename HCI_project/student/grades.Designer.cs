@@ -49,6 +49,7 @@
             btnhome.TabIndex = 2;
             btnhome.Text = "home";
             btnhome.UseVisualStyleBackColor = true;
+            btnhome.Click += btnhome_Click;
             // 
             // grades
             // 

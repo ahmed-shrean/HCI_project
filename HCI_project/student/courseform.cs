@@ -16,5 +16,16 @@ namespace HCI_project.student
         {
             InitializeComponent();
         }
+
+        private void btnhome_Click(object sender, EventArgs e)
+        {
+            stuhomeform nextForm = new stuhomeform();
+
+
+            nextForm.Show();
+
+
+            this.Close();
+        }
     }
 }

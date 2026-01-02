@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labGPA = new Label();
+            lblGPA = new Label();
             btnCourses = new Button();
             btnNotes = new Button();
             btnGrades = new Button();
             btnLogout = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            label2 = new Label();
+            btnAddCourse = new Button();
+            btnAddNote = new Button();
+            btnAddTask = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // labGPA
+            // lblGPA
             // 
-            labGPA.AutoSize = true;
-            labGPA.Location = new Point(334, 55);
-            labGPA.Name = "labGPA";
-            labGPA.Size = new Size(65, 15);
-            labGPA.TabIndex = 0;
-            labGPA.Text = "your gpa is";
-            labGPA.Click += labGPA_Click;
+            lblGPA.AutoSize = true;
+            lblGPA.Location = new Point(247, 47);
+            lblGPA.Name = "lblGPA";
+            lblGPA.Size = new Size(65, 15);
+            lblGPA.TabIndex = 0;
+            lblGPA.Text = "your gpa is";
+            lblGPA.Click += labGPA_Click;
             // 
             // btnCourses
             // 
@@ -67,6 +69,7 @@
             btnNotes.TabIndex = 2;
             btnNotes.Text = "notes";
             btnNotes.UseVisualStyleBackColor = true;
+            btnNotes.Click += btnNotes_Click;
             // 
             // btnGrades
             // 
@@ -76,6 +79,7 @@
             btnGrades.TabIndex = 4;
             btnGrades.Text = "grades";
             btnGrades.UseVisualStyleBackColor = true;
+            btnGrades.Click += btnGrades_Click;
             // 
             // btnLogout
             // 
@@ -85,6 +89,7 @@
             btnLogout.TabIndex = 5;
             btnLogout.Text = "log out";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // label1
             // 
@@ -97,36 +102,60 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(402, 73);
+            dataGridView1.Location = new Point(351, 25);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(293, 237);
+            dataGridView1.Size = new Size(384, 306);
             dataGridView1.TabIndex = 7;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // label2
+            // btnAddCourse
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(222, 222);
-            label2.Name = "label2";
-            label2.Size = new Size(124, 15);
-            label2.TabIndex = 8;
-            label2.Text = "حط التسكات في الجدول";
-            label2.Click += label2_Click;
+            btnAddCourse.Location = new Point(421, 376);
+            btnAddCourse.Name = "btnAddCourse";
+            btnAddCourse.Size = new Size(115, 50);
+            btnAddCourse.TabIndex = 8;
+            btnAddCourse.Text = "add course";
+            btnAddCourse.UseVisualStyleBackColor = true;
+            btnAddCourse.Click += btnAddCourse_Click;
+            // 
+            // btnAddNote
+            // 
+            btnAddNote.Location = new Point(197, 376);
+            btnAddNote.Name = "btnAddNote";
+            btnAddNote.Size = new Size(115, 50);
+            btnAddNote.TabIndex = 9;
+            btnAddNote.Text = "add note";
+            btnAddNote.UseVisualStyleBackColor = true;
+            btnAddNote.Click += btnAddNote_Click;
+            // 
+            // btnAddTask
+            // 
+            btnAddTask.Location = new Point(600, 376);
+            btnAddTask.Name = "btnAddTask";
+            btnAddTask.Size = new Size(115, 50);
+            btnAddTask.TabIndex = 10;
+            btnAddTask.Text = "add task";
+            btnAddTask.UseVisualStyleBackColor = true;
+            btnAddTask.Click += btnAddTask_Click;
             // 
             // stuhomeform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
+            Controls.Add(btnAddTask);
+            Controls.Add(btnAddNote);
+            Controls.Add(btnAddCourse);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(btnLogout);
             Controls.Add(btnGrades);
             Controls.Add(btnNotes);
             Controls.Add(btnCourses);
-            Controls.Add(labGPA);
+            Controls.Add(lblGPA);
             Name = "stuhomeform";
             Text = "stuhomeform";
+            Load += stuhomeform_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -134,13 +163,15 @@
 
         #endregion
 
-        private Label labGPA;
+        private Label lblGPA;
         private Button btnCourses;
         private Button btnNotes;
         private Button btnGrades;
         private Button btnLogout;
         private Label label1;
         private DataGridView dataGridView1;
-        private Label label2;
+        private Button btnAddCourse;
+        private Button btnAddNote;
+        private Button btnAddTask;
     }
 }

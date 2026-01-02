@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HCI_project.admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace HCI_project.student
         public notes()
         {
             InitializeComponent();
+        }
+
+        private void btnhome_Click(object sender, EventArgs e)
+        {
+            stuhomeform nextForm = new stuhomeform();
+
+
+            nextForm.Show();
+
+
+            this.Close();
         }
     }
 }

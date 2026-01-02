@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            cmbCourses = new ComboBox();
             button1 = new Button();
             button2 = new Button();
             label2 = new Label();
             label3 = new Label();
-            creadet_hour = new TextBox();
-            cours_code = new TextBox();
+            txtCreditHour = new TextBox();
+            txtCode = new TextBox();
             label4 = new Label();
             btnhome = new Button();
             SuspendLayout();
@@ -49,13 +49,14 @@
             label1.TabIndex = 0;
             label1.Text = "course name";
             // 
-            // comboBox1
+            // cmbCourses
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(311, 78);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
+            cmbCourses.FormattingEnabled = true;
+            cmbCourses.Location = new Point(311, 78);
+            cmbCourses.Name = "cmbCourses";
+            cmbCourses.Size = new Size(121, 23);
+            cmbCourses.TabIndex = 1;
+            cmbCourses.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -65,6 +66,7 @@
             button1.TabIndex = 2;
             button1.Text = "delete";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -95,19 +97,19 @@
             label3.TabIndex = 5;
             label3.Text = "code";
             // 
-            // creadet_hour
+            // txtCreditHour
             // 
-            creadet_hour.Location = new Point(311, 209);
-            creadet_hour.Name = "creadet_hour";
-            creadet_hour.Size = new Size(100, 23);
-            creadet_hour.TabIndex = 7;
+            txtCreditHour.Location = new Point(311, 209);
+            txtCreditHour.Name = "txtCreditHour";
+            txtCreditHour.Size = new Size(100, 23);
+            txtCreditHour.TabIndex = 7;
             // 
-            // cours_code
+            // txtCode
             // 
-            cours_code.Location = new Point(311, 149);
-            cours_code.Name = "cours_code";
-            cours_code.Size = new Size(100, 23);
-            cours_code.TabIndex = 8;
+            txtCode.Location = new Point(311, 149);
+            txtCode.Name = "txtCode";
+            txtCode.Size = new Size(100, 23);
+            txtCode.TabIndex = 8;
             // 
             // label4
             // 
@@ -135,16 +137,17 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnhome);
             Controls.Add(label4);
-            Controls.Add(cours_code);
-            Controls.Add(creadet_hour);
+            Controls.Add(txtCode);
+            Controls.Add(txtCreditHour);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbCourses);
             Controls.Add(label1);
             Name = "addCoursesForm";
             Text = "addCoursesForm";
+            Load += addCoursesForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -152,13 +155,13 @@
         #endregion
 
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox cmbCourses;
         private Button button1;
         private Button button2;
         private Label label2;
         private Label label3;
-        private TextBox creadet_hour;
-        private TextBox cours_code;
+        private TextBox txtCreditHour;
+        private TextBox txtCode;
         private Label label4;
         private Button btnhome;
     }

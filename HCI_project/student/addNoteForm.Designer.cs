@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             btnhome = new Button();
-            cours_code = new TextBox();
+            txtContent = new TextBox();
             label3 = new Label();
             button2 = new Button();
             label1 = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            comboBox1 = new ComboBox();
+            cmbCourses = new ComboBox();
             SuspendLayout();
             // 
             // btnhome
@@ -45,13 +45,15 @@
             btnhome.TabIndex = 20;
             btnhome.Text = "home";
             btnhome.UseVisualStyleBackColor = true;
+            btnhome.Click += btnhome_Click;
             // 
-            // cours_code
+            // txtContent
             // 
-            cours_code.Location = new Point(285, 89);
-            cours_code.Name = "cours_code";
-            cours_code.Size = new Size(100, 23);
-            cours_code.TabIndex = 18;
+            txtContent.Location = new Point(285, 69);
+            txtContent.Name = "txtContent";
+            txtContent.Size = new Size(230, 23);
+            txtContent.TabIndex = 18;
+            txtContent.TextChanged += txtContent_TextChanged;
             // 
             // label3
             // 
@@ -70,6 +72,7 @@
             button2.TabIndex = 14;
             button2.Text = "add";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
@@ -85,27 +88,29 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
-            // comboBox1
+            // cmbCourses
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(285, 163);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 21;
+            cmbCourses.FormattingEnabled = true;
+            cmbCourses.Location = new Point(285, 163);
+            cmbCourses.Name = "cmbCourses";
+            cmbCourses.Size = new Size(121, 23);
+            cmbCourses.TabIndex = 21;
+            cmbCourses.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // addNoteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbCourses);
             Controls.Add(btnhome);
-            Controls.Add(cours_code);
+            Controls.Add(txtContent);
             Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(label1);
             Name = "addNoteForm";
             Text = "addNoteForm";
+            Load += addNoteForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,11 +118,11 @@
         #endregion
 
         private Button btnhome;
-        private TextBox cours_code;
+        private TextBox txtContent;
         private Label label3;
         private Button button2;
         private Label label1;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private ComboBox comboBox1;
+        private ComboBox cmbCourses;
     }
 }
