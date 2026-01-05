@@ -36,7 +36,6 @@
             label3 = new Label();
             txtCreditHour = new TextBox();
             txtCode = new TextBox();
-            label4 = new Label();
             btnhome = new Button();
             SuspendLayout();
             // 
@@ -111,15 +110,6 @@
             txtCode.Size = new Size(100, 23);
             txtCode.TabIndex = 8;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(434, 271);
-            label4.Name = "label4";
-            label4.Size = new Size(230, 15);
-            label4.TabIndex = 9;
-            label4.Text = "لما يختار الماده بيظهر الكود الساعات المعتمده";
-            // 
             // btnhome
             // 
             btnhome.Location = new Point(32, 42);
@@ -136,7 +126,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnhome);
-            Controls.Add(label4);
             Controls.Add(txtCode);
             Controls.Add(txtCreditHour);
             Controls.Add(label3);
@@ -162,7 +151,6 @@
         private Label label3;
         private TextBox txtCreditHour;
         private TextBox txtCode;
-        private Label label4;
         private Button btnhome;
     }
 }

@@ -41,7 +41,7 @@ namespace HCI_project.student
 
             cmbCourses.DataSource = courses;
 
-            cmbCourses.DisplayMember = "CourseName";
+            cmbCourses.DisplayMember = "Name";
 
             cmbCourses.ValueMember = "CourseId";
 
@@ -57,48 +57,47 @@ namespace HCI_project.student
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtDescription.Text) ||
-               string.IsNullOrWhiteSpace(txtTitle.Text) ||
-               cmbCourses.SelectedIndex == -1) 
-            { if (dateTimePicker1.Value.Date < DateTime.Now.Date)
-                {
-                    MessageBox.Show("Please choose valid DATE.");
-                    return;
-                }
-                try { int currentUserId = UserSession.loger.UserId;
-
-                    HCI_project.Models.Task newTask = new HCI_project.Models.Task()
-                    {
-                        Title = txtTitle.Text,
-                        Description = txtDescription.Text,
-                        Deadline = dateTimePicker1.Value,
-                        IsCompleted = false,
-                        CourseId = Convert.ToInt32(cmbCourses.ValueMember),
-                        UserId = currentUserId
-                    };
-
-                    // 5. SAVE TO DATABASE
-                    dbContext.Tasks.Add(newTask);
-                    dbContext.SaveChanges();
-
-                    MessageBox.Show("Task added successfully!");
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-
-
-            
-            
-            }
-            else
+            string.IsNullOrWhiteSpace(txtTitle.Text) ||
+            cmbCourses.SelectedIndex == -1)
             {
-                MessageBox.Show("Please fill all places .");
+                MessageBox.Show("Please fill all places and select a course.");
                 return;
             }
 
+            // B. Date Validation
+            if (dateTimePicker1.Value.Date < DateTime.Now.Date)
+            {
+                MessageBox.Show("Please choose a valid DATE.");
+                return;
+            }
 
+            try
+            {
+                int currentUserId = UserSession.loger.UserId;
+
+                HCI_project.Models.Task newTask = new HCI_project.Models.Task()
+                {
+                    Title = txtTitle.Text,
+                    Description = txtDescription.Text,
+                    Deadline = dateTimePicker1.Value,
+                    IsCompleted = false,
+
+                    // C. CRITICAL FIX: Use 'SelectedValue', not 'ValueMember'
+                    CourseId = Convert.ToInt32(cmbCourses.SelectedValue),
+
+                    UserId = currentUserId
+                };
+
+                dbContext.Tasks.Add(newTask);
+                dbContext.SaveChanges();
+
+                MessageBox.Show("Task added successfully!");
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

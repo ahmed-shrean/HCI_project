@@ -37,6 +37,7 @@
             label3 = new Label();
             radStudent = new RadioButton();
             radAdmin = new RadioButton();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnSaveRegister
@@ -53,6 +54,7 @@
             // 
             txtPassword.Location = new Point(301, 144);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(100, 23);
             txtPassword.TabIndex = 8;
             // 
@@ -119,11 +121,22 @@
             radAdmin.Text = "admin";
             radAdmin.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.Location = new Point(31, 21);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 14;
+            button1.Text = "register";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // registerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(radAdmin);
             Controls.Add(radStudent);
             Controls.Add(txtemail);
@@ -150,5 +163,6 @@
         private Label label3;
         private RadioButton radStudent;
         private RadioButton radAdmin;
+        private Button button1;
     }
 }

@@ -19,7 +19,7 @@ namespace HCI_project.admin
 
         private void btnCoursesEdit_Click(object sender, EventArgs e)
         {
-            addcouresForm nextForm = new addcouresForm();
+            editecouresForm nextForm = new editecouresForm();
 
 
             nextForm.Show();
@@ -44,6 +44,28 @@ namespace HCI_project.admin
             UserSession.loger = null;
 
             loginForm nextForm = new loginForm();
+
+
+            nextForm.Show();
+
+
+            this.Close();
+        }
+
+        private void btnAddCourse_Click(object sender, EventArgs e)
+        {
+            addcourseForm nextForm = new addcourseForm();
+
+
+            nextForm.Show();
+
+
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            changegrades nextForm = new changegrades();
 
 
             nextForm.Show();

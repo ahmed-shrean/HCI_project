@@ -36,7 +36,7 @@ namespace HCI_project.student
             var courses = dbContext.Courses.ToList();
 
             cmbCourses.DataSource = courses;
-            cmbCourses.DisplayMember = "CourseName"; // Ensure this matches your DB column (e.g. "Name" or "CourseName")
+            cmbCourses.DisplayMember = "Name"; // Ensure this matches your DB column (e.g. "Name" or "CourseName")
             cmbCourses.ValueMember = "CourseId";
             cmbCourses.SelectedIndex = -1;
         }
@@ -76,7 +76,7 @@ namespace HCI_project.student
                 dbContext.SaveChanges();
 
                 MessageBox.Show("Note added successfully!");
-                this.Close();
+               
             }
             catch (Exception ex)
             {

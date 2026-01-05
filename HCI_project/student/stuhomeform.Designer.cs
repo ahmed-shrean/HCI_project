@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblGPA = new Label();
             btnCourses = new Button();
             btnNotes = new Button();
@@ -44,7 +45,7 @@
             // lblGPA
             // 
             lblGPA.AutoSize = true;
-            lblGPA.Location = new Point(247, 47);
+            lblGPA.Location = new Point(224, 274);
             lblGPA.Name = "lblGPA";
             lblGPA.Size = new Size(65, 15);
             lblGPA.TabIndex = 0;
@@ -101,10 +102,14 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(351, 25);
+            dataGridView1.Location = new Point(342, 43);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(384, 306);
+            dataGridView1.Size = new Size(425, 219);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 

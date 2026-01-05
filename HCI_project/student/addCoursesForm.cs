@@ -90,7 +90,7 @@ namespace HCI_project.student
 
             cmbCourses.DataSource = courses;
 
-            cmbCourses.DisplayMember = "CourseName";
+            cmbCourses.DisplayMember = "Name";
 
             cmbCourses.ValueMember = "CourseId";
 
@@ -104,14 +104,19 @@ namespace HCI_project.student
         {
             if (cmbCourses.SelectedIndex != -1)
             {
-                // 1. Recover the full Course object
-                // We cast the selected item back to your 'Course' class
+                // 1. Get the selected Course
                 Course selectedCourse = (Course)cmbCourses.SelectedItem;
 
-                // 2. Populate the text boxes
-                // Make sure 'txtCode' and 'txtCreditHour' match your actual textbox names
+                // 2. Fill the boxes
                 txtCode.Text = selectedCourse.Code;
                 txtCreditHour.Text = selectedCourse.CreditHours.ToString();
+            }
+            else
+            {
+                // 3. IMPORTANT: Clear the boxes if nothing is selected
+                // This fixes the issue of seeing data on load
+                txtCode.Text = "";
+                txtCreditHour.Text = "";
             }
         }
 

@@ -21,7 +21,7 @@ namespace HCI_project
 
         private void btnSaveRegister_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUserName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text)|| string.IsNullOrWhiteSpace(txtemail.Text))
+            if (string.IsNullOrWhiteSpace(txtUserName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text) || string.IsNullOrWhiteSpace(txtemail.Text))
             {
                 MessageBox.Show("Please fill all places .");
                 return;
@@ -35,26 +35,26 @@ namespace HCI_project
             {
                 try
                 {
-                    
+
                     bool isUserAdmin = false;
                     if (radAdmin.Checked)
                     {
                         isUserAdmin = true;
                     }
-                   User newUser = new User()
+                    User newUser = new User()
                     {
                         UserName = txtUserName.Text,
                         Password = txtPassword.Text,
                         Email = txtemail.Text,
-                        Isadmin = isUserAdmin  
+                        Isadmin = isUserAdmin
                     };
 
                     dbContext.Users.Add(newUser);
 
-                    
+
                     dbContext.SaveChanges();
 
-                   
+
                     MessageBox.Show("Registration successful!");
                     loginForm nextForm = new loginForm();
 
@@ -71,6 +71,17 @@ namespace HCI_project
             }
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loginForm nextForm = new loginForm();
+
+
+            nextForm.Show();
+
+
+            this.Close();
         }
     }
 }

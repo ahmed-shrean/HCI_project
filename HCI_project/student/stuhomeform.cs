@@ -76,7 +76,40 @@ namespace HCI_project.student
 
         private void stuhomeform_Load(object sender, EventArgs e)
         {
-            CalculateAndDisplayGPA();
+            CalculateAndDisplayGPA(); // Your existing GPA code
+            LoadTasks();              // <--- Add this line
+        }
+
+        private void LoadTasks()
+        {
+            // 1. Safety Check
+            if (UserSession.loger == null) return;
+
+            try
+            {
+                int currentUserId = UserSession.loger.UserId;
+
+                // 2. Query the Tasks table
+                // We filter by the logged-in student's ID
+                var myTasks = dbContext.Tasks
+                    .Where(t => t.UserId == currentUserId)
+                    .Select(t => new
+                    {
+                        // Select the columns you want to show in the table
+                        TaskName = t.Title,        // Check if your property is named 'Title' or 'TaskName'
+                        Description = t.Description,
+                        DueDate = t.Deadline,
+                        Status =( t.IsCompleted==true) ? "Done" : "Pending" // Optional: Show status text
+                    })
+                    .ToList();
+
+                // 3. Fill the DataGridView
+                dataGridView1.DataSource = myTasks;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading tasks: " + ex.Message);
+            }
         }
         private void CalculateAndDisplayGPA()
         {

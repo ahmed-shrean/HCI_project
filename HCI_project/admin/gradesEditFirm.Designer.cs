@@ -36,10 +36,10 @@
             label3 = new Label();
             label5 = new Label();
             txtscore = new TextBox();
-            txtstuname = new TextBox();
             txtexname = new TextBox();
             txtmaxscore = new TextBox();
             label7 = new Label();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // add
@@ -116,13 +116,6 @@
             txtscore.TabIndex = 24;
             txtscore.KeyPress += txtscore_KeyPress;
             // 
-            // txtstuname
-            // 
-            txtstuname.Location = new Point(266, 181);
-            txtstuname.Name = "txtstuname";
-            txtstuname.Size = new Size(100, 23);
-            txtstuname.TabIndex = 25;
-            // 
             // txtexname
             // 
             txtexname.Location = new Point(266, 124);
@@ -149,15 +142,24 @@
             label7.TabIndex = 27;
             label7.Text = "max score";
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(268, 184);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 29;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
             // gradesEditFirm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBox1);
             Controls.Add(txtmaxscore);
             Controls.Add(label7);
             Controls.Add(txtexname);
-            Controls.Add(txtstuname);
             Controls.Add(txtscore);
             Controls.Add(label5);
             Controls.Add(label3);
@@ -182,9 +184,9 @@
         private Label label3;
         private Label label5;
         private TextBox txtscore;
-        private TextBox txtstuname;
         private TextBox txtexname;
         private TextBox txtmaxscore;
         private Label label7;
+        private ComboBox comboBox1;
     }
 }
