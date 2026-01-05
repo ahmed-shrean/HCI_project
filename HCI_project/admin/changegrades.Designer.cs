@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cmbStudent = new ComboBox();
             txtMaxScore = new TextBox();
             label7 = new Label();
             txtScore = new TextBox();
@@ -37,20 +36,12 @@
             label2 = new Label();
             btnhome = new Button();
             btnedite = new Button();
-            cmbCourses = new ComboBox();
             label1 = new Label();
             btndelete = new Button();
+            cmbCourses = new ComboBox();
+            cmbStudent = new ComboBox();
             cmbExam = new ComboBox();
             SuspendLayout();
-            // 
-            // cmbStudent
-            // 
-            cmbStudent.FormattingEnabled = true;
-            cmbStudent.Location = new Point(274, 126);
-            cmbStudent.Name = "cmbStudent";
-            cmbStudent.Size = new Size(121, 23);
-            cmbStudent.TabIndex = 41;
-            cmbStudent.SelectedIndexChanged += cmbStudent_SelectedIndexChanged;
             // 
             // txtMaxScore
             // 
@@ -122,14 +113,6 @@
             btnedite.UseVisualStyleBackColor = true;
             btnedite.Click += btnedite_Click;
             // 
-            // cmbCourses
-            // 
-            cmbCourses.FormattingEnabled = true;
-            cmbCourses.Location = new Point(274, 66);
-            cmbCourses.Name = "cmbCourses";
-            cmbCourses.Size = new Size(121, 23);
-            cmbCourses.TabIndex = 31;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -149,13 +132,31 @@
             btndelete.UseVisualStyleBackColor = true;
             btndelete.Click += btndelete_Click_1;
             // 
+            // cmbCourses
+            // 
+            cmbCourses.FormattingEnabled = true;
+            cmbCourses.Location = new Point(274, 66);
+            cmbCourses.Name = "cmbCourses";
+            cmbCourses.Size = new Size(121, 23);
+            cmbCourses.TabIndex = 43;
+            cmbCourses.SelectedIndexChanged += cmbCourses_SelectedIndexChanged;
+            // 
+            // cmbStudent
+            // 
+            cmbStudent.FormattingEnabled = true;
+            cmbStudent.Location = new Point(276, 126);
+            cmbStudent.Name = "cmbStudent";
+            cmbStudent.Size = new Size(121, 23);
+            cmbStudent.TabIndex = 44;
+            cmbStudent.SelectedIndexChanged += cmbStudent_SelectedIndexChanged;
+            // 
             // cmbExam
             // 
             cmbExam.FormattingEnabled = true;
-            cmbExam.Location = new Point(276, 181);
+            cmbExam.Location = new Point(274, 181);
             cmbExam.Name = "cmbExam";
             cmbExam.Size = new Size(121, 23);
-            cmbExam.TabIndex = 43;
+            cmbExam.TabIndex = 45;
             cmbExam.SelectedIndexChanged += cmbExam_SelectedIndexChanged;
             // 
             // changegrades
@@ -164,8 +165,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(cmbExam);
-            Controls.Add(btndelete);
             Controls.Add(cmbStudent);
+            Controls.Add(cmbCourses);
+            Controls.Add(btndelete);
             Controls.Add(txtMaxScore);
             Controls.Add(label7);
             Controls.Add(txtScore);
@@ -174,7 +176,6 @@
             Controls.Add(label2);
             Controls.Add(btnhome);
             Controls.Add(btnedite);
-            Controls.Add(cmbCourses);
             Controls.Add(label1);
             Name = "changegrades";
             Text = "delete";
@@ -184,8 +185,6 @@
         }
 
         #endregion
-
-        private ComboBox cmbStudent;
         private TextBox txtMaxScore;
         private Label label7;
         private TextBox txtScore;
@@ -194,9 +193,10 @@
         private Label label2;
         private Button btnhome;
         private Button btnedite;
-        private ComboBox cmbCourses;
         private Label label1;
         private Button btndelete;
+        private ComboBox cmbCourses;
+        private ComboBox cmbStudent;
         private ComboBox cmbExam;
     }
 }
